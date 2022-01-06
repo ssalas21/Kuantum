@@ -63,6 +63,18 @@ namespace Kuantum.Models
                     .IsRequired()
                     .HasMaxLength(16)
                     .HasColumnName("serial_code");
+
+                entity.Property(e => e.Created_at)
+                    .HasColumnType("TimeSpan")                                        
+                    .HasColumnName("created_at");
+
+                entity.Property(e => e.Updated_at)
+                    .HasColumnType("TimeSpan")
+                    .HasColumnName("updated_at");
+
+                entity.Property(e => e.Deleted_at)
+                    .HasColumnType("TimeSpan")
+                    .HasColumnName("deleted_at");
             });
 
             modelBuilder.Entity<DocumentPageIndex>(entity =>

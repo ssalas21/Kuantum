@@ -12,12 +12,15 @@ namespace Kuantum.Models
             DocumentPageIndices = new HashSet<DocumentPageIndex>();
         }
 
-        public int Id { get; set; }
+        public int? Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
         public string AuthorFullName { get; set; }
         public string AuthorEmail { get; set; }
         public string SerialCode { get; set; }
+        public DateTime Created_at { get; set; }
+        public DateTime? Deleted_at { get; set; }
+        public DateTime Updated_at { get; set; }
 
         public virtual ICollection<DocumentPageIndex> DocumentPageIndices { get; set; }
     }
