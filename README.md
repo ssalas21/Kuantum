@@ -48,5 +48,6 @@ ALTER TABLE document_page_index
 ALTER TABLE document_page_index
   ADD CONSTRAINT FK_DocumentPage FOREIGN KEY (document_id) REFERENCES document (id);
 COMMIT;<br/>
-- Modificar en el proyecto la cadena de conexión en el archivo appsettings.json en el campo KuantumAPIConnection.<br/><br/>
+- Modificar en el proyecto la cadena de conexión en el archivo appsettings.json en el campo KuantumAPIConnection.<br/>
+- Modificar en el proyecto la cadena de conexión en el archivo kuantumContext.cs dentro de la carpeta Models
 
