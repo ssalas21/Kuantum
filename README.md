@@ -3,7 +3,8 @@ Postulación
 
 Implementación de la API
 
-API: Al descargar o clonar el proyecto se debe solo ejecutar en Visual Studio 2019 - Swagger implementado (
+API: Al descargar o clonar el proyecto se debe solo ejecutar en Visual Studio 2019 - Swagger implementado (Si se desea levantar una base de datos local, se debe leer el
+siguiente paso).
 
 Base de datos: 
 La base de datos se encuentra alojada en la cloud de Microsoft "Azure" especificamente en Azure Database for MySQL flexible server, en el caso de querer levantar la base
