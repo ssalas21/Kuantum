@@ -3,6 +3,8 @@ Postulación
 
 Implementación de la API
 
+API: Al descargar o clonar el proyecto se debe solo ejecutar en Visual Studio 2019 - Swagger implementado (
+
 Base de datos: 
 La base de datos se encuentra alojada en la cloud de Microsoft "Azure" especificamente en Azure Database for MySQL flexible server, en el caso de querer levantar la base
 localmente se debe:<br/>
@@ -46,4 +48,4 @@ ALTER TABLE document_page_index
   ADD CONSTRAINT FK_DocumentPage FOREIGN KEY (document_id) REFERENCES document (id);
 COMMIT;<br/>
 - Modificar en el proyecto la cadena de conexión en el archivo appsettings.json en el campo KuantumAPIConnection.<br/><br/>
-API: Al descargar o clonar el proyecto se debe solo ejecutar en Visual Studio 2019 - Swagger implementado
+
