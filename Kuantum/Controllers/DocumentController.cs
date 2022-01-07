@@ -12,10 +12,10 @@ namespace Kuantum.Controllers {
     [ApiController]
     public class DocumentController : ControllerBase {
 
-        [HttpGet("GetAll")]
+        [HttpGet]
         public async Task<JsonResult> GetAllAsync() {
             using (var context = new kuantumContext()) {
-                var aux = await context.Documents.ToListAsync();
+                var aux = await context.Documents.Include(x => x.DocumentPageIndices).ToListAsync();
                 return new JsonResult(aux);
             }
         }
@@ -23,6 +23,15 @@ namespace Kuantum.Controllers {
         [HttpPost]
         public async Task InsertAsync(Document document) {
             document.Created_at = DateTime.Now;
+            DateTime? date = null;
+            document.Updated_at = date;
+            document.Deleted_at = date;
+            int page = 1;
+            foreach (DocumentPageIndex item in document.DocumentPageIndices) {
+                item.Created_at = DateTime.Now;
+                item.Page = page;
+                page++;
+            }
             using (var context = new kuantumContext()) {
                 context.Documents.Add(document);
                 await context.SaveChangesAsync();
@@ -34,6 +43,12 @@ namespace Kuantum.Controllers {
             document.Updated_at = DateTime.Now;
             DateTime? date = null;
             document.Deleted_at = date;
+            int page = 1;
+            foreach (DocumentPageIndex item in document.DocumentPageIndices) {
+                item.Created_at = DateTime.Now;
+                item.Page = page;
+                page++;
+            }
             using (var context = new kuantumContext()) {
                 context.Documents.Update(document).Property(x => x.Created_at).IsModified = false;
                 await context.SaveChangesAsync();
